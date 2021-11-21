@@ -15,7 +15,7 @@ print(cairo)
 print(alex)
 print(el_madina)
 
-# another way for making look like the instructor solution 
+# another way for making it look like the instructor solution 
 
 def my_favorite_city(name):
     print('One of my favorite cities is ', name)
