@@ -1,0 +1,81 @@
+Defining-requirements:
+    - The first step to any design process is to gather your requirements.
+    - Figure out what your application or product needs to do.
+    - What is the problem you are trying to solve?
+    - Why are you building the application in the first place?
+    - At the core what are the applications functional requirements? Literally.
+    - what does it need to do? 
+    - What are the necessary features and capabilities?
+-------------------------------------------------------------------------------
+
+Non-Functional:
+    - And defining requirements has nothing to do with object orientaion.
+    - The requirements should not contain words like inheritance or abstration, or even class....
+
+--------------------------------------------------------------------------------
+
+When-we-writing-the-application-or-the-system-requirements-we-should-write-it-like-this:
+    - The system must do ....or 
+    - the application must do ....
+
+    - How the application should be .
+        - reliability == 'إمكانية الإعتماد على'
+        - Usability == 'سهولة الإستخدام'
+        - Availability == 'التوفر'
+        - Maintainability == 'قابلية الصيانة'
+    
+    - You dont need to be exhaustive and have answers for everything up front. On the first pass, 
+    - only focus on capturing the absolute minimum set of requirements.
+
+    - If the first pass at requirements isnt perfect, thats okay, you can update the requirements later if needed.
+
+    - The goal at this point is to get something written down and that could be as simple as bullet point son paper.
+
+--------------------------------------------------------------------------------
+
+FURPS-Plus-Requirements, Whitch stands for :
+
+    - Functionality =Translate= 'وظائف' 
+        - Capability
+        - Usability
+        - Security
+            ==> 'Functionality refers to the capabilities and features of the app.'
+        
+        
+    - Usability =Translate= 'سهولة الإستخدام' 
+
+        - Human Factors =Translate= 'عوامل بشرية' 
+        - Aesthetics =Translate= 'جماليات' 
+        - Consistancy =Translate= 'الاتساق' 
+        - Documentation =Translate= 'التوثيق' 
+            ==> 'Usability affects the person who will be using the program. Is it easy on the eyes? Is it intuitive to use? Is the documentation accurate and complete?'
+        
+
+    - Reliability =Translate= 'مصداقية' 
+
+        - Availability =Translate= 'التوفر' 
+        - Failure Rate  =Translate= 'معدل الفشل' 
+        - Duration =Translate= 'المدة' 
+        - Predictability. =Translate= 'القدرة على التنبؤ' 
+        ==> 'To define reliability requirements, you will need to know how much system downtime is acceptable. If the failures are predictable and how the system can be recovered.'
+
+
+    - Performance =Translate= 'أداء'
+
+        - Speed =Translate= 'سرعة'
+        - Efficiency =Translate= 'كفاءة'
+        - Resource Consumption =Translate= 'استهلاك المصدر'
+        - Scalability =Translate= 'قابلية التوسع'
+
+
+    - Supportability =Translate= 'الدعم' :
+
+        - Testability =Translate= 'قابلية الاختبار'
+        - Extensibilty =Translate= 'التمدد'
+        - Serviceability =Translate= 'القابلية للخدمة'
+        - Configurability =Translate= 'التكوين'
+-----------------------------------------------------------------------------------------------
+
+Recomended-Books:
+    1 - Software Requirements by Karl Wiegers.
+    2 - Mastering the Requirements Process by Suzanne and James Robertson.
