@@ -1,0 +1,183 @@
+# This is really usful chapter, I really think i should review it every week إن شاء الله .
+
+
+* Classes: 
+    1 - Everything is an object, but not every object came from the 
+        same class is the same object .
+
+    2 - The class consists from: 
+        - Name => ( What is it )
+        - Attributes => ( What describes it )
+        - Behavior => ( What can it do )
+
+    3 - Every object has its own identity, Independent from the other objects .
+
+    4 - The object that created from the class called ( Instance )
+
+----------------------------------------------------------------------------------------
+
+# There's a funny way to remember the four fundamental ideas in object oriennted programming,
+# to keep in mind when you creating Classes ==>> ( A P I E ) 'شطيرة' .
+    A => Abstraction == 'التجريد'
+    P => Polymorphism == 'تعدد الأشكال'
+    I => Inheritance == 'ميراث'
+    E => Encapsulation == 'التغليف'
+
+
+
+
+* Abstraction:
+    - It means we focus about on essential qualities of something rather than specific example.
+    - By using abstraction, we automatically discard what's unimportant or irrelevant. 
+
+* Encapsulation:
+    - The idea of encapsulation is about containing the elements of an object. Not just to keep them together.
+    - One of the main benefits with object orientation is that it allows us to more safely change the way the object works,
+      without changing the rest of the application.
+
+* Inheritance :
+    - nheritance enables a new class to receive or inherit the attributes and methods of existing classes 
+      using the same implementation which is a great form of code reuse. 
+      => أورث الصفات والخصائص أفضل من إعادة كتابة نفس الكود
+
+    - The main Class called == 'Super Class' > 'Parent Class'
+    - The Class who Inherited the main Class called == 'Sub Class' > 'Child Class'
+
+    - the great thing about inheritance is that if I make a change in a super class,
+      it will automatically filter down and effect all of the subclasses.
+
+* Polymorphism :
+    - I need to look back to the same culutre to review it more and more, Link below .
+        ( https://www.linkedin.com/learning/programming-foundations-object-oriented-design-3/polymorphism?autoAdvance=true&autoSkip=false&autoplay=true&resume=false )
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+* Object-Oriented ( Analysis   Design   Programming )
+
+    - Analysis == 'Uderstand your problem' ==> What do you need to do?, What are you trying to solve?
+
+    - Design == 'Plan your solution' ==> How are you going to do it?
+
+    - Programming == 'Build it' ==> Start doing what you implement .
+
+
+* What we need to do to buid and application before writing any peace of code: 
+
+    1 -  Gather requirements:
+        - Really flesh out the problem you're trying to solve.
+    
+    2 - Describ the applictation:
+        -  Build a narrative in plain, conversational language for how people will use it.
+
+    3 - Identify the most important objects:
+        -  which is the starting point for identifying actual classes.
+
+    4 - Describ the interactions:
+        - escribe the interactions between them, understanding each object's responsibilities,
+          the behaviors they need to have, and when they interact with other objects.
+    
+     5 - Create a class diagram:
+        -  which serves as the main output from the five-step process.
+        - The class diagram is a visual representation of the classes in the application,
+          and creating it is where the object oriented principles like inheritance and polymorphism really come into play.
+
+---------------------------------------------------------------------------------------------------
+# Important notes:
+    1 - What is the difference between object-oriented programming and procedural programming?
+        - Procedural programming specifies a sequence of tasks, but object-oriented programming describes the properties of tools or items.
+        - In object-oriented programming, there are some elements of procedural programming in the description of objects.
+
+    2 - How does dynamic polymorphism differ from static polymorphism?
+        - It uses overriding instead of overloading.
+        - Dynamic polymorphism creates a unique instance.
+
+    3 - What is overriding a method?
+        - Creating a unique version of an inherited method.
+    
+    4 - How are analysis and design different?
+        - Analysis describes a problem; design describes a solution.
+
+    5 - What is the term for a visual representation of the classes in an application?
+        - Class diagram.
+    
+    6 - In addition to attributes and methods, what does a UML class diagram contain?
+        - The class name.
+    
+    7 - How do object behaviors and attributes differ?
+        - Attributes describe a state, but behaviors describe actions.
+
+    8 - You are designing a traffic simulation program. What is a possible attribute that you could use for a car object?
+        - Gas mileage.
+    
+    9 - Shonzu has gathered the requirements for a new solution, described the application he is going to build,
+         and identified the main objects in the solution. What should he do next?
+
+        - Describe object interactions, This will be essential for understanding behaviors.
+    
+    10 - What is the purpose of encapsulation?
+        - to protect an object from unwanted changes
+    
+    11 - In addition to attributes and behaviors, which quality must a class possess?
+        - A name.
+    
+    12 - Behaviors come at the end of a class diagram, and contain room for arguments.
+
+    13 - What is a benefit of using a programming language that has a large library?
+        - Many classes are already defined and can be used without have to re-define them.
+    
+    14 - Attributes are generally nouns, and are placed just below the title.
+
+    15 - Focusing on the idea of a person instead of an individual
+         is an example of what fundamental idea in object-oriented programming?
+
+         - Abstraction.
+
+    16 - Steve is able to turn on and adjust his television even though he does not know how it works internally.
+         This exemplifies which principle of object-oriented programming?
+
+         - Encapsulation.
+    
+    17 - Why is inheritance used when creating a new class?
+        - to avoid redefining attributes and behaviors.
+    
+    18 - If an attribute is added to a superclass, what happens to all of the objects of the subclass?
+        - Each subclass object automatically receives the additional attribute.
+
+    19 - Static polymorphism uses method ....... .
+        - ( 'overloading.' ).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
