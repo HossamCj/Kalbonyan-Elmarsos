@@ -1,0 +1,60 @@
+Challenge:
+    * Write two use cases:
+        - title
+        - Primary actor
+        - Scenario ( Paragraph or List )
+
+    * Write two user stories:
+        - 'As a .... I want .... So that .....'
+
+-------------------------------------------------------------------------
+Use cases solutions:
+
+    Solution: Jukebox use cases:    1
+
+        - Title: 'Play a song'
+        
+        - Primary actor: 'User'
+
+        - Success scenario: ==> Paragraph
+            '
+                System identifies user. 
+                User browses library of available albmus.
+                User selcets an albmu and browses list of songs on the selected albmus.
+                User selects a song.
+                System plays the selected song. 
+            '
+
+    Solution: Jukebox use cases:    2
+
+        - Title: 'Select Multiple Songs'
+
+        - Primary Actor: 'User'
+
+        - Success Scenario:
+            1- System identifies user.
+            2- User browses available albums and songs.
+            3- User select a song.
+            4- System begins playing selected songs.
+            5- User continues browsing and selects a song.
+            6- System adds second song to play queue.
+            7- System plays second song after first song is over.
+
+        # This use case introduces the concept of a play queue that wasn't present in the first one. 
+
+--------------------------------------------------------------------------
+User stories solutions for Jukebox:
+
+    Solution 1:
+        - As a user, I want my song to be added to the front of a long play queue,
+            So that I don't have to wait for hours to hear it.
+
+        * From Usaibility standpoint:
+            - As a user, I want to be identified without my touching  anything,
+                 So that my hands can do other things.
+            
+            - As a user, I want to sort  and browse songs by artist,
+                So that I can listen to every song by the artist.
+                
+            - so as the spaceship's commander, I want the ability to cancel other users' selections,
+                so I don't have to listen to disco all the way to the moon. 
