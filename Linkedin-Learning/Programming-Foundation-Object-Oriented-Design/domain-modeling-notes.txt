@@ -1,0 +1,49 @@
+* Conceptual Model:
+    - Represents important objects and the relationships between them.
+
+    - What are the things in the application that we need to be aware of .
+    - Not everything we pick here will become a class, but a lot of them will.
+
+
+    - To identify objects, we'll go through all of our use cases and user stories 
+        and any other written requirements to pick out all of the nouns.
+
+
+# The conceptual Model in order :
+
+     1- Identifying the objects.
+        'So first we Identify the class the relationships bewteen the objects with using kewrods describe the meaning of it'.
+
+     2- Identifying class responsibilities.
+        '
+            - Responsibilities should be distributed between your objects not stored in one master object.
+            - An object should be responsible for itself, as much as possible.
+        '   
+
+-----------------------------------------------------------------------------
+
+CRC Technique :
+    C == 'Class'
+    R == 'Responsibilities'
+    C == 'Collaboration'
+
+------------------------------------------------
+|    C == Class: Name                          |
+------------------------------------------------
+|    R == Responsibilies | C == Collaborators  |
+|                        |                     | 
+|                        |                     |
+|                        |                     |
+|                        |                     |
+------------------------------------------------
+
+------------------------------------------------
+|    Missile                                   |
+------------------------------------------------
+|    Fly through space   |   Spaceship         |
+|    Destroy asteroid    |   Area              | 
+|    Disappear offscreen |   Asteroid          |
+|                        |                     |
+|                        |                     |
+------------------------------------------------
+    

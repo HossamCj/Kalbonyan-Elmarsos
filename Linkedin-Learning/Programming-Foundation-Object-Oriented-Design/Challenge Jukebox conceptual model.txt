@@ -1,0 +1,49 @@
+Solution: Jukebox use cases:    2
+
+        - Title: 'Select Multiple Songs'
+
+        - Primary Actor: 'User'
+
+        - Success Scenario:
+            1- System identifies user.
+            2- User browses available albums and songs.
+            3- User select a song.
+            4- System begins playing selected songs.
+            5- User continues browsing and selects a song.
+            6- System adds second song to play queue.
+            7- System plays second song after first song is over.
+User stories solutions for Jukebox:
+    - so as the spaceship's commander, I want the ability to cancel other users' selections,
+        so I don't have to listen to disco all the way to the moon. 
+
+
+
+
+* Picking up nouns:
+    - Possible Objects:
+        - System (Removed)
+        - User
+        - Song
+        - Album
+        - Commander (Changed to == Admin)
+        - Selection (Removed)
+
+    - Objects:
+        - User
+        - Song
+        - Album    
+        - Admin
+
+--------------------------
+
+* Picking up verbs:
+    - Browse library of albums
+    - Browse albums
+    - Select a song
+    - playing selected song
+    - Add song to play queue
+    - Play song from queue
+    - Identify user
+    - Cancel song ing queue
+
+# Look at the picture to review how they explain it 
