@@ -1,0 +1,152 @@
+* Creating class diagrams: Behavior
+
+    - You'll commonly see plus and minus signs before the attributes and methods in UML class diagrams.
+    - Which is referred to as controlling visibility.
+    - Minus indicates that a member should be private to the class, 
+    - meaning it's not directly accessible by other objects, 
+    - and plus means the member should be public.
+
+    ------------------------------------
+
+    * The rule here is to leave as many attributes and methods private as possible,
+    and only make something public if you know another object will need to use it. 
+
+    -------------------------------------
+
+    * What are going to happen if we just jumped to object creation?!
+
+    * We could do that but what often happens when people jump straight to object creation: 
+            - they focus on the data.
+            - They decide they need a space ship object but the way they start to build 
+            - the spaceship is to have a call sign, size, shape, color, mass, thrust, position, velocity, shield strength,
+            - the obvious attributes.
+
+        * So what are the behaviors?
+            - That's the problem. 
+
+        * Your focus should really be on what object do rather than just viewing them as data structures.
+
+-----------------------------------------
+
+* Converting class diagrams into code: ==> LOOK AT THE DIAGRAME FILE IN THE SAME DIR.
+
+    - The code in python :
+
+        class Spaceship():
+
+            def __init__(self):
+
+                # instance variables
+                self.callSign = ''
+                self._shieldStrength = 100      # Added ' _ ' to indicate that it should be treated as if it were private 
+
+            # methods
+            def fireMissile(self):
+                return 'Pew!'
+
+            def reduiceShield(self, amount):
+                self.shieldStrength -= amount
+
+-------------------------------------
+
+* Instantiating classes:
+
+    - when we use that same line of code to instantiate the object,
+    - it will be initialized with those specific values that we want instead of the default values of Null and zero.
+
+    Example:
+
+        - The code in python :
+
+            class Spaceship():
+
+                def __init__(self):
+
+                    # instance variables
+                    self.callSign = ''
+                    self._shieldStrength = 100      # Added ' _ ' to indicate that it should be treated as if it were private 
+
+                # methods
+                def fireMissile(self):
+                    return 'Pew!'
+
+                def reduiceShield(self, amount):
+                    self.shieldStrength -= amount
+
+                # contructor method
+                def Spaceship(self):
+                    name = "The nameless ship"
+                    shieldStrength = 100
+
+    - So when we create new object like:
+        myShip = Spaceship()
+
+        # myShip going to take those two variables as a vlues 
+            object myShip:
+                callSign = 'The nameless ship'   
+                shieldStrength = 100
+
+--------------------------------------------
+
+* class with multible constructors:
+    - Languages that use garbage collection use something called a finalizer,
+      rather than a destructor, but the concept is the same. 
+
+    - It's a place to put some code that will automatically be called when the object is destroyed.
+
+    # Overload instructor ==> the code in python language
+    class Spaceship():
+
+    def __init__(self):
+
+        # instance variables
+        self.callSign = ''
+        self._shieldStrength = 100      # the ' _ ' to indicate it as a private variable
+
+        # methods
+        def fireMissile(self):
+            return 'Pew'
+
+        def reduiceShield(self, amount):
+            self.shieldStrength -= amount
+
+        # constructor method
+        def Spaceship(self):
+            name = "The nameless ship"
+            shieldStrength = 100
+        
+        # overload constructor
+        def Spaceship(self, name)
+            callSign = name 
+            shieldStrength = 200
+
+
+    - So we can create an object in 2 different ways:
+
+        myShip = Spaceship() 
+        # this one going to have these values:
+            # name = 'The nameless ship'
+            # shieldStrength = 100
+
+        myShip = Spaceship('new ship')
+        # but this one going to have different values:
+            # name = 'new ship'
+            # shieldStrength = 200
+
+---------------------------------------------------
+
+* Static attributes and methods:
+
+    - When it comes to accessing instance level variables, we use the name of the object to get to them. 
+
+    - So to access the call sign of the spaceship object named Ship One, we would use [ ship1.callSign ]
+    
+    - But if we want to access a static variable, we need to use the class name, not a particular instance name.
+
+    - So [ spaceship.toughness ]. 
+
+    # Even if you haven't instantiated any objects of this class yet, you can still use any variables defined as static.
+    # So we could set the toughness for the entire spaceship class before instantiating any spaceship objects. 
+
+    # Now, in addition to static variables, 
+    # we can also create static methods that exist at the class level. Like when creating static variables
