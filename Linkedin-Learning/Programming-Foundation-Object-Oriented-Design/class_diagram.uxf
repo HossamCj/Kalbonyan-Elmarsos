@@ -1,4 +1,4 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>34</x><y>30</y><w>250</w><h>160</h></coordinates><panel_attributes>Spaceship
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>124</x><y>70</y><w>250</w><h>160</h></coordinates><panel_attributes>Spaceship
 --
 - callSign: String
 - shieldStrength: Integer
@@ -10,4 +10,13 @@ _+ toughness_ # Static variable
 _+ increaseDifficulty(Float) _
 
 
-</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>380</x><y>270</y><w>310</w><h>50</h></coordinates><panel_attributes>bg=white
+Exaple of aggregation</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>350</y><w>220</w><h>100</h></coordinates><panel_attributes>
+Fleet
+
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>550</y><w>220</w><h>110</h></coordinates><panel_attributes>
+Spaceship
+
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>320</y><w>260</w><h>270</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;40;240;10;10;250</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>450</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLNote</id><coordinates><x>130</x><y>0</y><w>310</w><h>50</h></coordinates><panel_attributes>bg=white
+Static varibale example diagram</panel_attributes><additional_attributes></additional_attributes></element></diagram>

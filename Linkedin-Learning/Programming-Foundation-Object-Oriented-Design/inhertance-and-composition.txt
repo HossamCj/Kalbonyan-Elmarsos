@@ -1,0 +1,45 @@
+* Interfaces:
+    - Interfaces and abstract classes can seem similar at first. But they serve different purposes.
+
+    - Interfaces are used to represent a capability that a class implements. 
+
+    - Whereas and abstract class represents a type that another class can inherit from. 
+
+
+* I can rewatch the same chapter again when I need it, it's easy to uderstand. ### Important
+
+-----------------------------------------
+
+* Aggregation:
+    * Definition:
+        - Inheritance is just one type of relationship that can exist between objects. 
+        - The concept of aggregation is another type of object relationship in which one object is built of other objects.
+        - we can represent the has a relationship for aggregation with an unfilled diamond. 
+
+    * Aggregation describes a 'Has a' relationship
+
+        - I wouldn't say that the fleet is a spaceship,
+        - but I could say that the fleet has many spaceships.
+
+    * In UML diagrams, we can represent the has a relationship for aggregation with an unfilled diamond.
+
+    * So what happens when we end the fleet? Do the ships go away?:
+        - In the case of aggregation, no.
+        - The spaceships each exist independently of the fleet,
+        - so destroying the fleet is like breaking up a band. 
+        - The individual ships can continue to exist and do their own thing. 
+
+        - So perhaps a better phrase for an aggregation relationship than has a is uses a, or uses many.
+        - The fleet uses many spaceships, and if the fleet ceases to fly together,
+        - the individual spaceships will continue to exist on their own.
+
+---------------------------------------
+
+* Composition:
+
+    * Definition:
+        - A more specific form of aggregation is something called composition. 
+        - Like aggregation, composition is based around a has-a relationship between objects but it specifically implies ownership.
+
+    
+    * Composition implies ownership and an engine has no meaning or purpose in the system without a spaceship. 

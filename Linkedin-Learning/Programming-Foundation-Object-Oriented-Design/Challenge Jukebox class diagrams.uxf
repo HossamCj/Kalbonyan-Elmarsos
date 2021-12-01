@@ -31,9 +31,9 @@ Queue
 
 --
 
-+ addSong(Song, String) # The string taken from the user 
++ addSong(Song, UserId) 
 + addNextSong(): Song
-+ removeSong(Song
++ removeSong(Song)
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>395</x><y>10</y><w>290</w><h>190</h></coordinates><panel_attributes>
 Admin
 
