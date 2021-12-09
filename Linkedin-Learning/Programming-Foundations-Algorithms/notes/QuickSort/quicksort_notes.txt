@@ -1,0 +1,26 @@
+* The Quicksort:
+    - Divide-and-conquer algorithm, like the merge sort.
+    - Also uses recursion to perform sorting.
+    
+    - Generally performs better than merge sort, O(n log n).
+    - Operates in place in data.
+    
+    - Worst case in O(n2) when data is mostly sorted already.
+
+
+* The Quicksort: Pivot Point Selection
+
+* A programmer needs to organize a data set. How will a quick sort accomplish this?
+    - It will use a pivot point and move items that are on the wrong side 
+      of the pivot value by using high and low index values.
+
+    - A quick sort sets a pit point to partition a data set.
+      High and low index values are then used to rearrange data values that are on the "wrong" side of the pivot point.
+
+
+* How does the required time for a merge sort grow with the size of the data set?
+    - logarithmic-linear
+
+
+
+    

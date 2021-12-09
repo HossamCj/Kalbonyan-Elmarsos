@@ -1,0 +1,50 @@
+* What benefit does a linked list provide?
+    - underlying memory does not need to be contiguous
+    - The underlying memory that holds any node data does not need to be contiguous for a linked list.
+
+* What criteria allows algorithms to execute efficiently?
+    - the scenario and available data structure types.
+    - The efficient use of algorithms depends on the scenario,
+    - such as a task list that needs to be sorted
+    - and the structure type such as an array.
+
+* Why are hash tables favored over arrays or linked lists?
+    - They are faster for item lookups.
+
+* Why are linked lists sometimes preferred over arrays?
+    - They are easier and faster to iterate sequentially.
+
+* Stacks are _____ data structures.
+    - last in, first out
+
+* Queue is ______ data structures.
+    - first in, first out
+
+* How does a hash table map index values to data values?
+    - Keys are mapped to data values by using a hash to
+        compute an index value.
+
+* Which data structure is most analogous to a dictionary?
+    - a hash table
+
+* What does the below code do, when working with a linked list?
+
+    1 new_node = Node(data)
+    2 new_node.set_next(self.head)
+    3 self.head = new_node
+    4 self.count += 1
+
+        - It add a new node and makes it the head of the list.
+        - When a new value (node) is inserted in a linked list,
+        - the head can point to the new node by using the self.head = new_node code.
+
+* Which data structure operation would be used 
+    for an “undo” command?
+        - a stack using last-in, first-out
+        - A stack is useful in providing backtracking features such as an undo button.
+        -An undo button would process the last command used as the first to undo.
+
+* How many elements are in an 8 by 3 by 2 array?
+    - 48 (2*3 = 6, 6*8 = 48)
+
+
