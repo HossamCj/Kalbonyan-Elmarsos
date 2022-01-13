@@ -1,9 +1,11 @@
-// Challenge 1
-// City, Country, Location
+// You can't define a variable more than once 
+let pcOs = 'Windows'
 
-// In this challenge I was testing the "Var keyword for the variables and the ;"
-var city = 'Giza'
-var country = 'Egypt';
-let location = city + ', ' + country;
+pcOs = 'Linux'
 
-console.log(location)
+// I was checking if the variable need the LET word or not
+a = 'A'
+
+console.log(pcOs)
+
+console.log(a)
