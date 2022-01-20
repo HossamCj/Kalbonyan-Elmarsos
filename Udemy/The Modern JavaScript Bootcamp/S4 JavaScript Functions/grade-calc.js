@@ -5,32 +5,23 @@
 
 let getStudentScore = function(studentScore, totalScore = 100) {
     let percentage = studentScore / totalScore * 100
+    letterGrade = ''
 
     if (percentage >= 90) {
-        let a_scoreMessage = `You got a A (${percentage}%!)`
-        return a_scoreMessage
-
+         letterGrade = 'A'
     } else if (percentage >= 80) {
-        let b_scoreMessage = `You got a B (${percentage}%!)`
-        return b_scoreMessage
-
+         letterGrade = 'B'
     } else if (percentage >= 70) {
-        let c_scoreMessage = `You got a C (${percentage}%!)`
-        return c_scoreMessage
-
+         letterGrade = 'C'
     } else if(percentage >= 60) {
-        let d_scoreMessage = `You got a D (${percentage}%!)`
-        return d_scoreMessage
-
+         letterGrade = 'D'
     } else if(percentage <= 59) {
-      let f_scoreMessage = `You got a F (${percentage}%!)`
-      return f_scoreMessage
-
-    } else {
-      let errorMessage = 'Please enter your grads'
-      return errorMessage
+         letterGrade = 'F'
     }
 
+
+    let gradeMessage = `You got a ${letterGrade} (${percentage}%)!`
+    return gradeMessage
 }
 
 
