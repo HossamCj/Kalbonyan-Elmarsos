@@ -19,16 +19,19 @@ console.log(score1)
 
 
 // Challenge area
-
 // Total, tip precent .2
-let getTip = function (total, tipPrecent = 0.2) {
-    let result = total * tipPrecent
-    return result
+
+// Template strings challenge, Example: A 25% top on $40 would be $10
+let getTip = function (total, tipPrecent = 0.25) {
+    let calcTip = total * tipPrecent
+    let precentage = tipPrecent * 100
+    let tipMessage = `A ${precentage}% top on $${total} would be $${calcTip}`
+    return tipMessage
 }
 
 let tip = getTip(100)
 console.log(tip)
 
 // Add new tip precentage
-let newTip = getTip(100, .25)
+let newTip = getTip(100, .30)
 console.log(newTip)
