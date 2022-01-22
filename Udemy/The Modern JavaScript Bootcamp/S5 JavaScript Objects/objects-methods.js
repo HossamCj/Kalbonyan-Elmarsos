@@ -13,7 +13,8 @@ let restaurant = {
         if (guestSize <= seatsLeft) {
             this.guestCount += guestSize
         } else {
-            console.log('There\'s no available seats for your group, sorry!')
+            let notAvailableMessage = `Sorry, There's no space for your ${guestSize} guests.`
+            console.log(notAvailableMessage)
         }
     },
 
