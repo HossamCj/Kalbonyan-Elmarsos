@@ -3,7 +3,7 @@
 // Print the first and the second to the last items
 // ==> Todo: Read 5 pages
 
-
+ 
 let todoList = []
 
 let todoApp = function (todo) {

@@ -1,7 +1,16 @@
-let notesAr = ['أ', 'ب', 'ت', 'ث']
+let notesAr = ['A', 'B', 'C', 'D']
 let text = 'مجرد بعض الكمات'
 
-console.log(notesAr.length)
-console.log(Array.isArray(text))
+console.log(Array.isArray(text)) 
 
-console.log(notesAr[notesAr.length -1]) // Printing the last item in the array 
+// notesAr.push('ج') // Add from the back of the (array / list)
+// notesAr.pop() // Deleting from the last of the (array / list)
+// notesAr.shift('A') // Deleting from the beginning of the (array / list)
+// notesAr.unshift('A') // Adding from the front of the (array / list)
+// console.log(notesAr[notesAr.length -1]) // Printing the last item in the array 
+
+notesAr.splice(-1, 1, 'أ')
+notesAr.splice(-2, 1, 'ب')
+notesAr.splice(-3, 1, 'ت')
+notesAr.splice(-4, 1, 'ث')
+console.log(notesAr)
