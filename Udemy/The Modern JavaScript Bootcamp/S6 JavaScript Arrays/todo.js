@@ -21,3 +21,15 @@ console.log(todoApp(' Do 4 pullup'))
 
 console.log(todoList)
 
+// Challenge area
+const todo = ['30 pushups', '15 pullups', 'Read 10 pages of the book', 'Five hours of study1']
+
+// Delete the 3rd item
+todo.splice(2, 1)
+
+// Add a new item to the end
+todo.push('Read ten pages of the management time book')
+
+// Remove the first item from the list
+todo.shift()
+console.log(todo)
