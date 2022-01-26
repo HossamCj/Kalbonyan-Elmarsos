@@ -29,7 +29,14 @@ todo.splice(2, 1)
 
 // Add a new item to the end
 todo.push('Read ten pages of the management time book')
+todo.push('Do 5 pullups')
 
 // Remove the first item from the list
 todo.shift()
 console.log(todo)
+
+
+// Loop Challenge
+todo.forEach(function (item, index) {
+    console.log(`${index + 1}. ${item}.`)
+})
