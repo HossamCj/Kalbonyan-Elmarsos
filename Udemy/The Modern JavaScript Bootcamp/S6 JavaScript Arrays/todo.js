@@ -3,7 +3,7 @@
 // Print the first and the second to the last items
 // ==> Todo: Read 5 pages
 
- 
+// Challenge Add todo task as a function
 let todoList = []
 
 let todoApp = function (todo) {
@@ -36,7 +36,16 @@ todo.shift()
 console.log(todo)
 
 
-// Loop Challenge
+// foorEach Challenge
 todo.forEach(function (item, index) {
     console.log(`${index + 1}. ${item}.`)
 })
+
+
+// Foor loop challenge area
+// Printing the todo list items without using forEach()
+
+for (let count = 0; count < todo.length; count++) {
+    let index = count + 1
+    console.log(`${index}.`, todo[count])
+}

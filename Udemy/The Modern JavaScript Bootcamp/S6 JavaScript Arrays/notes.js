@@ -14,3 +14,15 @@ notesAr.splice(-2, 1, 'ب')
 notesAr.splice(-3, 1, 'ت')
 notesAr.splice(-4, 1, 'ث')
 console.log(notesAr)
+
+
+// For loop: Counting....
+for (let count = 0; count < notesAr.length; count++) {
+    console.log(notesAr[count])
+}
+
+console.log('Break')
+
+for (let count = notesAr.length - 1; count >= 0; count--) {
+    console.log(notesAr[count])
+}
