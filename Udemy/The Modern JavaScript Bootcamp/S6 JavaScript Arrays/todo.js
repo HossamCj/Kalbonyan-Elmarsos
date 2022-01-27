@@ -10,7 +10,7 @@ let todoApp = function (todo) {
     todoList.push(todo)
     let popupMessage = `You have: ${todoList.length} todos, `
 
-    return popupMessage + todoList[todoList.length - 1]
+    return `${popupMessage} the last todo you pushed is: ${todoList[todoList.length - 1]}`
 }
 
 console.log(todoApp('Read 20 pages'))
@@ -19,7 +19,6 @@ console.log(todoApp('Read 1 page with the family'))
 console.log(todoApp(' Do 5 pullup'))
 console.log(todoApp(' Do 4 pullup'))
 
-console.log(todoList)
 
 // Challenge area
 const todo = ['30 pushups', '15 pullups', 'Read 10 pages of the book', 'Five hours of study1']
@@ -44,7 +43,6 @@ todo.forEach(function (item, index) {
 
 // Foor loop challenge area
 // Printing the todo list items without using forEach()
-
 for (let count = 0; count < todo.length; count++) {
     let index = count + 1
     console.log(`${index}.`, todo[count])
