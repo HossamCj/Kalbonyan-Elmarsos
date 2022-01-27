@@ -1,49 +1,33 @@
-// Create an array with five todos
-// You have x Todos
-// Print the first and the second to the last items
-// ==> Todo: Read 5 pages
+// Searching Arrays Challenge
 
-// Challenge Add todo task as a function
-let todoList = []
+const todoList = []
 
-let todoApp = function (todo) {
+// Add todo
+const addTodo = function (todoList, todo) {
     todoList.push(todo)
-    let popupMessage = `You have: ${todoList.length} todos, `
-
-    return `${popupMessage} the last todo you pushed is: ${todoList[todoList.length - 1]}`
 }
 
-console.log(todoApp('Read 20 pages'))
-console.log(todoApp('30 Pushup'))
-console.log(todoApp('Read 1 page with the family'))
-console.log(todoApp(' Do 5 pullup'))
-console.log(todoApp(' Do 4 pullup'))
+// Delete todo
+const deleteTodo = function (todoList, todoTitle) {
+    const index = todoList.findIndex(function (todo) {
+        return todo.title.toLowerCase() === todoTitle.toLowerCase()
+    })
 
+    if (index > -1) {
+        todoList.splice(index, 1)
+    }
+}
 
-// Challenge area
-const todo = ['30 pushups', '15 pullups', 'Read 10 pages of the book', 'Five hours of study1']
-
-// Delete the 3rd item
-todo.splice(2, 1)
-
-// Add a new item to the end
-todo.push('Read ten pages of the management time book')
-todo.push('Do 5 pullups')
-
-// Remove the first item from the list
-todo.shift()
-console.log(todo)
-
-
-// foorEach Challenge
-todo.forEach(function (item, index) {
-    console.log(`${index + 1}. ${item}.`)
+addTodo(todoList, {
+    title: 'Read Book 1',
+    completed: true
+})
+addTodo(todoList, {
+    title: 'Read book 2',
+    completed: false
 })
 
+console.log(todoList)
 
-// Foor loop challenge area
-// Printing the todo list items without using forEach()
-for (let count = 0; count < todo.length; count++) {
-    let index = count + 1
-    console.log(`${index}.`, todo[count])
-}
+deleteTodo(todoList, 'Read book 1')
+console.log(todoList)
