@@ -37,6 +37,7 @@ const notes = [
     }
 ]
 
+// Using findIndex()
 const findNote = function (note, noteTitle) {
     const index = note.findIndex(function (note, index) {
         return note.title === noteTitle
@@ -47,3 +48,14 @@ const findNote = function (note, noteTitle) {
 
 const note = findNote(notes, 'Note 2')
 console.log(note)
+
+
+// Using find()
+const find_note = function (notes, noteTitle) {
+    return notes.find(function (note, index) {
+        return note.title.toLowerCase() === noteTitle.toLowerCase()
+    })
+}
+
+let note2 = find_note(notes, 'note 3')
+console.log(note2)
