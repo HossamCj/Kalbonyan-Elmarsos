@@ -24,16 +24,16 @@ let text = 'مجرد بعض الكمات'
 
 const notes = [
     {
-        title: 'Note 1',
-        body: 'Body 1',
+        title: 'My first day',
+        body: 'I just started doing some exercise الحمد لله',
     },
     {
-        title: 'Note 2',
-        body: 'Body 2',
+        title: 'Second day',
+        body: 'I started read more finally',
     },
     {
-        title: 'Note 3',
-        body: 'Body 3',
+        title: 'Third day',
+        body: 'Teaching my family somethings',
     }
 ]
 
@@ -45,7 +45,6 @@ const findNote = function (note, noteTitle) {
 
     return notes[index]
 }
-
 const note = findNote(notes, 'Note 2')
 console.log(note)
 
@@ -56,6 +55,56 @@ const find_note = function (notes, noteTitle) {
         return note.title.toLowerCase() === noteTitle.toLowerCase()
     })
 }
-
 let note2 = find_note(notes, 'note 3')
 console.log(note2)
+
+
+// Using filter()
+console.log('Using filter')
+const filterNotes = notes.filter(function (note, index) {
+    const isTitleMatch = note.title.toLowerCase().includes('with')
+    const isBodyMatch = note.body.toLowerCase().includes('1')
+
+    return isTitleMatch || isBodyMatch
+})
+console.log(filterNotes)
+
+// Using query for the search
+const findMyNote = function (note, query) {
+    return note.filter(function (note, index) {
+        const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase())
+        const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase())
+
+        return isTitleMatch || isBodyMatch
+    })
+}
+
+console.log(findMyNote(notes, 'thi'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
