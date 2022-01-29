@@ -1,5 +1,3 @@
-// Searching Arrays Challenge
-
 const todoList = []
 
 // Add todoList
@@ -37,12 +35,33 @@ addTodo(todoList, {
 })
 // console.log(todoList)
 
-
 // getThingsTodo() Challenge
 const getThingsTodo = function (todoList) {
     return todoList.filter(function (todo) {
-        return todo.completed
+        return !todo.completed
+    })
+}
+// console.log(getThingsTodo(todoList))
+
+
+// Sort array for todo challenge:
+const sortTodo = function (todoList) {
+    todoList.sort(function (a, b) {
+        if (a.completed < b.completed) {
+            return -1
+        } else if (b.completed < a.completed) {
+            return 1
+        } else {
+            return 0
+        }
     })
 }
 
-console.log(getThingsTodo(todoList))
+console.log('Before sorting todo list')
+console.log(todoList)
+
+sortTodo(todoList)
+console.log('After sorting todo list')
+console.log(todoList)
+
+console.log(true < false)

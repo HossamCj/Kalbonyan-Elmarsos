@@ -24,13 +24,15 @@ let text = 'مجرد بعض الكمات'
 
 const notes = [
     {
-        title: 'My first day',
+        title: 'This is my first day',
         body: 'I just started doing some exercise الحمد لله',
     },
+
     {
-        title: 'Second day',
+        title: 'Believe or not',
         body: 'I started read more finally',
     },
+
     {
         title: 'Third day',
         body: 'Teaching my family somethings',
@@ -46,8 +48,7 @@ const findNote = function (note, noteTitle) {
     return notes[index]
 }
 const note = findNote(notes, 'Note 2')
-console.log(note)
-
+// console.log(note)
 
 // Using find()
 const find_note = function (notes, noteTitle) {
@@ -56,18 +57,17 @@ const find_note = function (notes, noteTitle) {
     })
 }
 let note2 = find_note(notes, 'note 3')
-console.log(note2)
-
+// console.log(note2)
 
 // Using filter()
-console.log('Using filter')
+// console.log('Using filter')
 const filterNotes = notes.filter(function (note, index) {
     const isTitleMatch = note.title.toLowerCase().includes('with')
     const isBodyMatch = note.body.toLowerCase().includes('1')
 
     return isTitleMatch || isBodyMatch
 })
-console.log(filterNotes)
+// console.log(filterNotes)
 
 // Using query for the search
 const findMyNote = function (note, query) {
@@ -78,5 +78,32 @@ const findMyNote = function (note, query) {
         return isTitleMatch || isBodyMatch
     })
 }
+// console.log(findMyNote(notes, 'thi'))
 
-console.log(findMyNote(notes, 'thi'))
+
+// Sorting Array
+console.log('Before sorting')
+console.log(notes)
+
+const sortNotes = function (note) {
+    note.sort(function (a, b) {
+
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+
+            return -1
+
+        } else if (b.title.toLowerCase() < a.title.toLowerCase()) {
+
+            return 1
+
+        } else {
+            
+            return 0
+
+        }
+    })
+}
+
+sortNotes(notes)
+console.log('After Sorting')
+console.log(notes)
