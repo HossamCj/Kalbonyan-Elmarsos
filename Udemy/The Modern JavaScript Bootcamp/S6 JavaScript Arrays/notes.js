@@ -80,31 +80,3 @@ const findMyNote = function (note, query) {
 }
 
 console.log(findMyNote(notes, 'thi'))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

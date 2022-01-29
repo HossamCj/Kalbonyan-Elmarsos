@@ -2,12 +2,12 @@
 
 const todoList = []
 
-// Add todo
+// Add todoList
 const addTodo = function (todoList, todo) {
     todoList.push(todo)
 }
 
-// Delete todo
+// Delete todoList
 const deleteTodo = function (todoList, todoTitle) {
     const index = todoList.findIndex(function (todo) {
         return todo.title.toLowerCase() === todoTitle.toLowerCase()
@@ -23,11 +23,26 @@ addTodo(todoList, {
     completed: true
 })
 addTodo(todoList, {
-    title: 'Read book 2',
+    title: 'Read zad book 1',
+    completed: true
+})
+addTodo(todoList, {
+    title: '30 minutes of exercise',
     completed: false
 })
-
-console.log(todoList)
-
 deleteTodo(todoList, 'Read book 1')
-console.log(todoList)
+addTodo(todoList, {
+    'title': 'Ready with the family and hangout with them',
+    completed: false,
+})
+// console.log(todoList)
+
+
+// getThingsTodo() Challenge
+const getThingsTodo = function (todoList) {
+    return todoList.filter(function (todo) {
+        return todo.completed
+    })
+}
+
+console.log(getThingsTodo(todoList))
