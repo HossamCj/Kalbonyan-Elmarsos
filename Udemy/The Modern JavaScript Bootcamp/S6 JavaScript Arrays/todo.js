@@ -57,11 +57,22 @@ const sortTodo = function (todoList) {
     })
 }
 
+// Another way for sorting
+const sortTodo2 = function (todoList) {
+    todoList.sort(function (a, b) {
+        if (!a.completed && b.completed) {
+            return -1
+        } else if (!b.completed && a.completed) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+}
+
 console.log('Before sorting todo list')
 console.log(todoList)
 
-sortTodo(todoList)
+sortTodo2(todoList)
 console.log('After sorting todo list')
 console.log(todoList)
-
-console.log(true < false)
