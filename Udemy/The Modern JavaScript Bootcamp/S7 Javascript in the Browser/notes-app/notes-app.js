@@ -1,18 +1,31 @@
 // DOM ==   Document Object Model
+const notes = [
+    {
+        title: 'Nex Plane إن شاء الله',
+        description: 'Study daily until end of Feb'
+    },
+    {
+        title: 'Day 25',
+        description: 'Start adding more tasks to the daily tasks'
+    },
+    {
+        title: 'the internship finished',
+        description: 'At the end of Feb إن شاء الله it should be finished'
+    }
+]
 
-// Query and remove()
-const p = document.querySelector('p')
-p.remove()
-
-// Query all and remove()
-const ps = document.querySelectorAll('p')
-
-ps.forEach(function (p) {
-    p.textContent = 'Replacing a new value from js'
-    // p.remove()
+document.querySelector('#add-note').addEventListener('click', function (e) {
+    e.target.textContent = 'Note Added!'
+    console.log('Note Added!')
 })
 
-// Create new element 
-const newH2 = document.createElement('h2')
-newH2.textContent = 'New Heading from js'
-document.querySelector('body').appendChild(newH2)
+document.querySelector('#delete-all-notes').addEventListener('click', function () {
+    document.querySelectorAll('.note').forEach(function (note) {
+        note.remove()
+    })
+})
+
+// Add filter for search text
+document.querySelector('#search-text').addEventListener('input', function (e) {
+    console.log(e.target.value)
+})

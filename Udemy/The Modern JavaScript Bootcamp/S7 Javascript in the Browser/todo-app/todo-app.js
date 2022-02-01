@@ -27,5 +27,19 @@ document.querySelector('body').appendChild(summary)
 todoList.forEach(function (todo) {
     const li = document.createElement('li')
     li.textContent = todo.text
-    document.querySelector('ol').appendChild(li)
+
+    if (todo.completed === false) {
+        document.querySelector('ol').appendChild(li)
+    }
+})
+
+// Listen for new todo creation
+document.querySelector('#add-todo').addEventListener('click', function () {
+    console.log('Add todo!!!')
+})
+
+
+// Listen for todo text
+document.querySelector('#add-todo-text').addEventListener('input', function (e) {
+    console.log(e.target.value)
 })
