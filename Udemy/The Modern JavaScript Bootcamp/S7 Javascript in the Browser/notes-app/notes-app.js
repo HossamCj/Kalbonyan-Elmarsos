@@ -1,7 +1,7 @@
 // DOM ==   Document Object Model
 const notes = [
     {
-        title: 'Nex Plane إن شاء الله',
+        title: 'Next Plane إن شاء الله',
         description: 'Study daily until end of Feb'
     },
     {
@@ -13,6 +13,25 @@ const notes = [
         description: 'At the end of Feb إن شاء الله it should be finished'
     }
 ]
+
+const filters = {
+    searchText: ''
+}
+
+const renderNote = function (notes, filters) {
+    const filteredNotes = notes.filter(function (note) {
+        return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
+    })
+
+    document.querySelector('#notes').innerHTML = ''
+
+    filteredNotes.forEach(function (note) {
+        const noteElement = document.createElement('p')
+        noteElement.textContent = note.title
+        document.querySelector('#notes').appendChild(noteElement)
+    })
+}
+
 
 document.querySelector('#add-note').addEventListener('click', function (e) {
     e.target.textContent = 'Note Added!'
@@ -27,5 +46,6 @@ document.querySelector('#delete-all-notes').addEventListener('click', function (
 
 // Add filter for search text
 document.querySelector('#search-text').addEventListener('input', function (e) {
-    console.log(e.target.value)
-})
+    filters.searchText = e.target.value
+    renderNote(notes, filters)
+})  
