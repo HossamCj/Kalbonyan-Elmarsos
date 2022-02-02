@@ -3,43 +3,60 @@ const todoList = [{
     completed: false
 }, {
     text: 'Read ( Zad Werd )',
-    completed: false
+    completed: true
 }, {
     text: 'Read 20 pages from time management book',
     completed: false
 }, {
     text: 'Visit the family',
-    completed: true
+    completed: false
 }]
 
 
-// Message like: You have 2 todos left (p element)
-// Add a p for each todo above (user text value)
+const filters = {
+    searchText: ''
+}
 
-const inCompletedTodo = todoList.filter(function (todo) {
-    return !todo.completed
+const renderTodoList = function (todoList, filters) {
+    const filteredTodoList = todoList.filter(function (todo) {
+        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+    })
+
+    document.querySelector('#todo-list').innerHTML = ''
+
+    filteredTodoList.forEach(function (todo) {
+        const todoElement = document.createElement('p')
+        todoElement.textContent = todo.text
+        document.querySelector('#todo-list').appendChild(todoElement)
+    })
+
+    const inCompletedTodo = filteredTodoList.filter(function (todo) {
+        return !todo.completed
+    })
+    
+    const summary = document.createElement('h3')
+    summary.textContent = `You have ${inCompletedTodo.length} todos left`
+    document.querySelector('#todo-list').appendChild(summary)
+    
+}
+
+renderTodoList(todoList, filters)
+
+// Add todo search filter
+document.querySelector('#search-todo-text').addEventListener('input', function (e) {
+    filters.searchText = e.target.value
+    renderTodoList(todoList, filters)
 })
 
-const summary = document.createElement('h3')
-summary.textContent = `You have ${inCompletedTodo.length} todos left`
-document.querySelector('body').appendChild(summary)
+// AddTodo
+document.querySelector('#add-todo-form').addEventListener('submit', function (e) {
+    e.preventDefault()
+    todoList.push({
+        text: e.target.elements.addTodo.value,
+        completed: false
+    })
 
-todoList.forEach(function (todo) {
-    const li = document.createElement('li')
-    li.textContent = todo.text
+    renderTodoList(todoList, filters)
 
-    if (todo.completed === false) {
-        document.querySelector('ol').appendChild(li)
-    }
-})
-
-// Listen for new todo creation
-document.querySelector('#add-todo').addEventListener('click', function () {
-    console.log('Add todo!!!')
-})
-
-
-// Listen for todo text
-document.querySelector('#add-todo-text').addEventListener('input', function (e) {
-    console.log(e.target.value)
+    e.target.elements.addTodo.value = ''
 })

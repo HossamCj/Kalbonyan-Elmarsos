@@ -38,14 +38,14 @@ document.querySelector('#add-note').addEventListener('click', function (e) {
     console.log('Note Added!')
 })
 
-document.querySelector('#delete-all-notes').addEventListener('click', function () {
-    document.querySelectorAll('.note').forEach(function (note) {
-        note.remove()
-    })
-})
-
 // Add filter for search text
 document.querySelector('#search-text').addEventListener('input', function (e) {
     filters.searchText = e.target.value
     renderNote(notes, filters)
 })  
+
+document.querySelector('#name-form').addEventListener('submit', function (e) {
+    e.preventDefault()
+    console.log(e.target.elements.firstName.value)
+    e.target.elements.firstName.value = ''
+})
