@@ -14,13 +14,27 @@ const todoList = [{
 
 
 const filters = {
-    searchText: ''
+    searchText: '',
+    hideCompleted: false
 }
+
 
 const renderTodoList = function (todoList, filters) {
     const filteredTodoList = todoList.filter(function (todo) {
-        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+        const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+        const hideCompletedMatch = !filters.hideCompleted || !todo.completed
+        
+        return searchTextMatch && hideCompletedMatch
     })
+
+    // filteredTodoList = filteredTodoList.filter(function (todo) {
+        // return !filters.hideCompleted || !todo.completed
+    //     if (filters.hideCompleted) {
+    //         return !todo.completed
+    //     } else {
+    //         return true
+    //     }
+    // })
 
     document.querySelector('#todo-list').innerHTML = ''
 
@@ -59,4 +73,10 @@ document.querySelector('#add-todo-form').addEventListener('submit', function (e)
     renderTodoList(todoList, filters)
 
     e.target.elements.addTodo.value = ''
+})
+
+// Hide completed
+document.querySelector('#hide-completed').addEventListener('change', function (e) {
+    filters.hideCompleted = e.target.checked
+    renderTodoList(todoList, filters)
 })

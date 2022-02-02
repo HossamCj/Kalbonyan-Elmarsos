@@ -44,8 +44,8 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
     renderNote(notes, filters)
 })  
 
-document.querySelector('#name-form').addEventListener('submit', function (e) {
-    e.preventDefault()
-    console.log(e.target.elements.firstName.value)
-    e.target.elements.firstName.value = ''
+
+// Add check box
+document.querySelector('#check-me').addEventListener('change', function (e) {
+    console.log(e.target.checked)
 })
