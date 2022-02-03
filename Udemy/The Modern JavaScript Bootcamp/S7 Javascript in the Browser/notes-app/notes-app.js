@@ -45,7 +45,6 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
 })  
 
 
-// Add check box
-document.querySelector('#check-me').addEventListener('change', function (e) {
-    console.log(e.target.checked)
+document.querySelector('#filter-by').addEventListener('change', function (e) {
+    console.log(e.target.value)
 })
