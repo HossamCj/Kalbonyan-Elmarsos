@@ -1,82 +1,60 @@
-const todoList = [{
-    text: 'Three hours 30 minutes of coding on js-udemy',
-    completed: false
-}, {
-    text: 'Read ( Zad Werd )',
-    completed: true
-}, {
-    text: 'Read 20 pages from time management book',
-    completed: false
-}, {
-    text: 'Visit the family',
-    completed: false
-}]
-
+let todos = []
 
 const filters = {
     searchText: '',
     hideCompleted: false
 }
 
+const todosJSON = localStorage.getItem('todos')
 
-const renderTodoList = function (todoList, filters) {
-    const filteredTodoList = todoList.filter(function (todo) {
+if (todosJSON !== null) {
+    todos = JSON.parse(todosJSON)
+}
+
+const renderTodos = function (todos, filters) {
+    const filteredTodos = todos.filter(function (todo) {
         const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
         const hideCompletedMatch = !filters.hideCompleted || !todo.completed
-        
+
         return searchTextMatch && hideCompletedMatch
     })
 
-    // filteredTodoList = filteredTodoList.filter(function (todo) {
-        // return !filters.hideCompleted || !todo.completed
-    //     if (filters.hideCompleted) {
-    //         return !todo.completed
-    //     } else {
-    //         return true
-    //     }
-    // })
-
-    document.querySelector('#todo-list').innerHTML = ''
-
-    filteredTodoList.forEach(function (todo) {
-        const todoElement = document.createElement('p')
-        todoElement.textContent = todo.text
-        document.querySelector('#todo-list').appendChild(todoElement)
-    })
-
-    const inCompletedTodo = filteredTodoList.filter(function (todo) {
+    const incompleteTodos = filteredTodos.filter(function (todo) {
         return !todo.completed
     })
-    
-    const summary = document.createElement('h3')
-    summary.textContent = `You have ${inCompletedTodo.length} todos left`
-    document.querySelector('#todo-list').appendChild(summary)
-    
+
+    document.querySelector('#todos').innerHTML = ''
+
+    const summary = document.createElement('h2')
+    summary.textContent = `You have ${incompleteTodos.length} todos left`
+    document.querySelector('#todos').appendChild(summary)
+
+    filteredTodos.forEach(function (todo) {
+        const p = document.createElement('p')
+        p.textContent = todo.text
+        document.querySelector('#todos').appendChild(p)
+    })
 }
 
-renderTodoList(todoList, filters)
+renderTodos(todos, filters)
 
-// Add todo search filter
-document.querySelector('#search-todo-text').addEventListener('input', function (e) {
+document.querySelector('#search-text').addEventListener('input', function (e) {
     filters.searchText = e.target.value
-    renderTodoList(todoList, filters)
+    renderTodos(todos, filters)
 })
 
-// AddTodo
-document.querySelector('#add-todo-form').addEventListener('submit', function (e) {
+document.querySelector('#new-todo').addEventListener('submit', function (e) {
     e.preventDefault()
-    todoList.push({
-        text: e.target.elements.addTodo.value,
+    todos.push({
+        text: e.target.elements.text.value,
         completed: false
     })
-
-    renderTodoList(todoList, filters)
-
-    e.target.elements.addTodo.value = ''
+    localStorage.setItem('todos', JSON.stringify(todos))
+    renderTodos(todos, filters)
+    e.target.elements.text.value = ''
 })
 
-// Hide completed
 document.querySelector('#hide-completed').addEventListener('change', function (e) {
     filters.hideCompleted = e.target.checked
-    renderTodoList(todoList, filters)
+    renderTodos(todos, filters)
 })

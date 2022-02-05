@@ -1,24 +1,18 @@
 // DOM ==   Document Object Model
-const notes = [
-    {
-        title: 'Next Plane إن شاء الله',
-        description: 'Study daily until end of Feb'
-    },
-    {
-        title: 'Day 25',
-        description: 'Start adding more tasks to the daily tasks'
-    },
-    {
-        title: 'the internship finished',
-        description: 'At the end of Feb إن شاء الله it should be finished'
-    }
-]
+let notes = []  
 
 const filters = {
     searchText: ''
 }
 
-const renderNote = function (notes, filters) {
+// Checking for existing saved data
+const notesJSON = localStorage.getItem('notes')
+
+if (notesJSON !== null) {
+    notes = JSON.parse(notesJSON)
+}
+
+const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
         return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
     })
@@ -27,23 +21,34 @@ const renderNote = function (notes, filters) {
 
     filteredNotes.forEach(function (note) {
         const noteElement = document.createElement('p')
-        noteElement.textContent = note.title
+
+        if (note.title.length > 0 ) {
+            noteElement.textContent = note.title
+        } else {
+            noteElement.textContent = 'Unnamed note!'
+        }
+        
         document.querySelector('#notes').appendChild(noteElement)
     })
 }
 
+renderNotes(notes, filters)
 
 document.querySelector('#add-note').addEventListener('click', function (e) {
-    e.target.textContent = 'Note Added!'
-    console.log('Note Added!')
+    notes.push({
+        title: '',
+        body: ''
+    })
+    
+    localStorage.setItem('notes', JSON.stringify(notes))
+    renderNotes(notes, filters)
 })
 
 // Add filter for search text
 document.querySelector('#search-text').addEventListener('input', function (e) {
     filters.searchText = e.target.value
-    renderNote(notes, filters)
+    renderNotes(notes, filters)
 })  
-
 
 document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value)
