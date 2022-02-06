@@ -14,6 +14,30 @@ const saveTodos = function (todos) {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
 
+// Remove todo from the list
+const removeTodo = function (id) {
+    const todoIndex = todos.findIndex(function (todo) {
+        return todo.id === id
+    })
+
+    if (todoIndex > -1) {
+        todos.splice(todoIndex, 1)
+    }
+    
+}
+
+// Toggel the completed value for given todo
+const toggleTodo = function (id) {
+    const todo = todos.find(function (todo) {
+        return todo.id === id
+    })
+
+    if (todo !== undefined) {
+        todo.completed = !todo.completed
+    }
+    
+}
+
 // Render application todos based on filters
 const renderTodos = function (todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
@@ -39,18 +63,6 @@ const renderTodos = function (todos, filters) {
     })
 }
 
-// Remove todo from the list
-const removeTodo = function (id) {
-    const todoIndex = todos.findIndex(function (todo) {
-        return todo.id === id
-    })
-
-    if (todoIndex > -1) {
-        todos.splice(todoIndex, 1)
-    }
-    
-}
-
 // Get the DOM elements for an individual todo
 const generateTodoDOM = function (todo) {
     const todoElement = document.createElement('div')
@@ -60,7 +72,13 @@ const generateTodoDOM = function (todo) {
 
     // Setup todo checkbox
     checkTodoElement.setAttribute('type', 'checkbox')
+    checkTodoElement.checked = todo.completed
     todoElement.appendChild(checkTodoElement)
+    checkTodoElement.addEventListener('change', function () {
+        toggleTodo(todo.id)
+        saveTodos(todos)
+        renderTodos(todos, filters)
+    })
 
     // Setup the todo text
     todoTextElement.textContent = todo.text
