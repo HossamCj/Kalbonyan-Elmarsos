@@ -32,7 +32,7 @@ const generateNoteDOM = function (note) {
     const textElement = document.createElement('a')
     const removeNoteButton = document.createElement('button')
     
-    // Setupd remove note element
+    // Setup remove note element
     removeNoteButton.textContent = 'x'
     noteElement.appendChild(removeNoteButton)
     removeNoteButton.addEventListener('click', function () {
@@ -55,7 +55,7 @@ const generateNoteDOM = function (note) {
 }
 
 
-// Sort notes by on of three ways
+// Sort notes by one of three ways
 const sortNotes = function (notes, sortBy) {
     if (sortBy === 'byEdited') {
 
