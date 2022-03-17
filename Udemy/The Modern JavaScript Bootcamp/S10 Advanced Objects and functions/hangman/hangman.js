@@ -18,8 +18,31 @@ Hangman.prototype.getPuzzle = function () {
     return puzzle
 }
 
-const game1 = new Hangman('Dog', 2)
-console.log(game1.getPuzzle())
 
-const game2 = new Hangman('Book', 6)
-console.log(game2.getPuzzle())
+Hangman.prototype.makeGuess = function (guess) {
+    guess = guess.toLowerCase()
+    const isUnique = !this.guessedLetters.includes(guess)
+    const isBadGuess = !this.word.includes(guess)
+
+    if (isUnique) {
+        this.guessedLetters.push(guess)
+    }
+
+    if (isUnique && isBadGuess) {
+        this.remainingGuesses--
+    }
+    
+}
+
+
+const game1 = new Hangman('Cat', 2)
+
+console.log(game1.getPuzzle())
+console.log(game1.remainingGuesses)
+
+window.addEventListener('keypress', function (e) {
+    const guess = String.fromCharCode(e.charCode)
+    game1.makeGuess(guess)
+    console.log(game1.getPuzzle())
+    console.log(game1.remainingGuesses)
+})
