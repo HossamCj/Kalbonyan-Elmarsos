@@ -1,6 +1,6 @@
 // Prototypal inheritance
 
-class PersonClass {
+class Person {
     constructor (firstName, lastName, age, likes = []) {
         this.firstName = firstName
         this.lastName = lastName
@@ -14,47 +14,43 @@ class PersonClass {
         })
         return bio
     }
+    setName(fullName) {
+        const names = fullName.split(' ')
+        this.firstName = names[0]
+        this.lastName = names[1]
+    }
 }
 
-const myPerson = new PersonClass('Hossam', 'AboNooh', 25, ['Reading', 'Recite Quran and Hadith'])
-console.log(myPerson.getBio())
-
-const Person = function (firstName, lastName, age, like = []) {
-    this.firstName = firstName
-    this.lastName = lastName
-    this.age = age
-    this.like = like
+class Employee extends Person {
+    constructor(firstName, lastName, age, position, likes) {
+        super(firstName, lastName, age, likes)
+        this.position = position
+    }
+    getBio() {
+        return `${this.firstName} ${this.lastName} is a ${this.position}`
+        // Hossam is a Fullstack Developer
+    }
+    getYearsLeft() {
+        return 50 - this.age
+    }
 }
 
-Person.prototype.getBio = function () {
-    let bio = `${this.firstName} is ${this.age}`
-    this.like.forEach((like) => {
-        bio += ` ${this.firstName} likes ${like}`   
-    })
-
-    return bio
+class Student extends Person {
+    constructor (firstName, lastName, age, grade, likes) {
+        super(firstName, lastName, age, likes)
+        this.grade = grade
+    }
+    updateGrade(change) {
+        this.grade += change
+    }
+    getBio() {
+        const status = this.grade >= 70 ? 'passing' : 'failing'
+        return `${this.firstName} is ${status} the class`
+    }
 }
 
-Person.prototype.setName = function (fullName) {
-    const names = fullName.split(' ')
-    this.firstName = names[0]
-    this.lastName = names[1]
-}
+const student1 = new Student('Hossam', 'Hassan', 25, 80, [])
+console.log(student1.getBio())
 
-const me = new Person('Hossam', 'Hassan', 25, ['Reading', 'Parkour'])
-me.setName('Abo Nooh')
-console.log(me.getBio())
-
-const person1 = new Person('Nooh', 'Hossam', 20, ['Reading', 'Parkour', 'Shouting'])
-console.log(person1.getBio())
-
-
-
-
-
-
-
-
-
-
-
+student1.updateGrade(-20)
+console.log(student1.getBio())
