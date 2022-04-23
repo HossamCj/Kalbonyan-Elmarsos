@@ -14,4 +14,4 @@
 - Creating tables
 -------------------------------
 [Course Link](https://www.linkedin.com/learning/html-essential-training-4)
-<br>[Preview Certificate]()
+<br>[Preview Certificate](https://www.linkedin.com/learning/certificates/847f6a33864d40b3e90159a1759e98af44bde6b51b55244a9d9cdfde4ca83438?trk=share_certificate)
