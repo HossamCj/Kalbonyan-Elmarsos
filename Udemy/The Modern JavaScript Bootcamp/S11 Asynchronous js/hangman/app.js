@@ -12,18 +12,14 @@ window.addEventListener('keypress', function (e) {
     guessesElement.textContent = game1.statusMessage
 })  
 
-getPuzzle(5, (error, puzzle) => {
-    if (error) {
-        console.log(`Error: $ {error}`)
-    } else {
-        console.log(puzzle)
-    }
+getPuzzle('5').then((puzzle) => {
+    console.log(puzzle)
+}, (error) => {
+    console.log(`Error: ${error}`)
 })
 
-getCountry('US', (error, country) => {
-    if (error) {
-        console.log(error)
-    } else {
-        console.log(`Country name: ${country.name}`)
-    }
+getCountry('US').then((country) => {
+    console.log(country.name)   // There's an actual problem with the api, no problem in my code
+}, (error) => {
+    console.log(`Error: ${error}`)
 })
