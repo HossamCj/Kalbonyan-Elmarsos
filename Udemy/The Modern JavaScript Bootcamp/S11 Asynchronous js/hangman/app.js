@@ -14,12 +14,15 @@ window.addEventListener('keypress', function (e) {
 
 getPuzzle('5').then((puzzle) => {
     console.log(puzzle)
-}, (error) => {
+}).catch((error) => {
     console.log(`Error: ${error}`)
 })
 
-getCountry('US').then((country) => {
-    console.log(country.name)   // There's an actual problem with the api, no problem in my code
-}, (error) => {
+
+getLocation().then((location) => {
+    return getCountry(location.country)
+}).then((country) => {
+    console.log(country.name)
+}).catch((error) => {
     console.log(`Error: ${error}`)
 })
