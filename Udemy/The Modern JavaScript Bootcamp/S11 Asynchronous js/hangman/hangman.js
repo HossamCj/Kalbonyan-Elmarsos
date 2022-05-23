@@ -8,7 +8,7 @@ class Hangman {
     calculateStatus() {
         const finished = this.word.every((letter) => this.guessedLetters.includes(letter) || letter === ' ')
 
-        if (this.remainingGuesses === 0 ) {
+        if (this.remainingGuesses === 0) {
             this.status = 'failed'
         } else if (finished) {
             this.status = 'finished'
@@ -27,11 +27,12 @@ class Hangman {
     }
     get puzzle() {
         let puzzle = ''
+
         this.word.forEach((letter) => {
             if (this.guessedLetters.includes(letter || letter === ' ')) {
                 puzzle += letter 
             } else {
-                puzzle = puzzle + '*'
+                puzzle += '*'
             }
         })
 
@@ -39,7 +40,7 @@ class Hangman {
     }
     makeGuess(guess) {
         guess = guess.toLowerCase()
-        const isUnique = ~this.guessedLetters.includes(guess)
+        const isUnique = !this.guessedLetters.includes(guess)
         const isBadGuess = !this.word.includes(guess)
 
         if (this.status !== 'playing') {
