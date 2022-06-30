@@ -11,16 +11,23 @@ module.exports = {
         clean: true
     },  
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: '/node_modules/',
-            use: {
-                loader: "babel-loader",
-                options: {
-                    presets: ['@babel/preset-env']
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: '/node_modules/',
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
                 }
+            },
+            {
+                test: /\.js$/,
+                enforce: "pre",
+                use: ["source-map-loader"]
             }
-        }]
+        ]
     },
     devServer: {
         static: {

@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("From my code: ./utilities.js"),console.log("printing from index.js"),console.log(10),console.log("".concat("name".toUpperCase(),"!")),console.log(5*5)})();
+(()=>{"use strict";console.log("From my code: ./utilities.js"),console.log("printing from index.js"),console.log(10),console.log("".concat("ن".toUpperCase(),"!")),console.log(5*5)})();
