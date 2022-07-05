@@ -4,7 +4,7 @@
 const add = (a, b) => a + b
 const square = (x) => x * x
 
-const name = 'ن'
+const name = 'sss'
 
 console.log('From my code: ./utilities.js')
 
